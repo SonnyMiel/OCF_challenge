@@ -1,4 +1,5 @@
 @import './colors.scss';
+@import './elements.scss';
 @import './fonts.scss';
 @import './buttons.scss';
 
@@ -10,16 +11,12 @@ html {
   &, body {
     font-family: Overpass, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;  
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
   }
   body {
     font-size: $font-default;
   }
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 * {
@@ -33,13 +30,6 @@ a {
   src: url('/fonts/Overpass/Overpass-Regular.ttf');
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: Overpass;
-  src: url('/fonts/Overpass/Overpass-Bold.ttf');
-  font-style: bold;
-  font-weight: 500;
   font-display: swap;
 }
 

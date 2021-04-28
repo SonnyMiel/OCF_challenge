@@ -1,5 +1,5 @@
 import Footer from '../components/Footer';
-import Landing from '../components/Landing';
+import Landing from '../components/Landing/landing';
 import Navbar from '../components/Navbar/navbar';
 import Search from '../components/Search';
 
