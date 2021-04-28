@@ -1,0 +1,54 @@
+@import '/styles/colors.scss';
+
+.content {
+  padding: 21px 27px;
+  & > div:first-child {
+    margin-bottom: 16px;
+  }
+  a > svg {
+    fill: $grey;
+    position: relative;
+    top: -6px;
+    transition: color .3s ease;
+  }
+  & > div {
+    align-items: center;
+    color: $grey;
+    display: grid;
+    font-size: 1.5rem;
+    font-weight: 600;
+    grid-column-gap: 14px;
+    grid-template-columns: 20px auto;
+    transition: color .2s ease;
+  }
+  div > p:last-child {
+    color: $grey;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 7px;
+    transition: color .2s ease;
+    & > a {
+      display: inline-block;
+      margin-right: 6px;
+      transition: color .2s ease;
+    }
+  }
+}
+
+.footer {
+  background: $background;
+  border-radius: 0 0 6px 6px;
+  color: $grey;
+  display: grid;
+  font-size: 1.1rem;
+  font-weight: 500;
+  grid-gap: 14px 10px;
+  grid-template-columns: 80px auto;
+  padding: 16px 27px;
+  a {
+    display: grid;
+    grid-column-gap: 6px;
+    grid-template-columns: 12px auto;
+    transition: color .2s ease;
+  }
+}

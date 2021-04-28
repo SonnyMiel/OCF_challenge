@@ -1,0 +1,20 @@
+@import './colors.scss';
+
+.btn {
+  border: none;
+  background: transparent;
+  color: $purple-light;
+  font-size: $font-small;
+}
+
+.btn-secondary {
+  background: #3577ff;
+  border-radius: 6px;
+  box-shadow: 0 0 0 rgba(8,150,230,.6);
+  color: $white;
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-right: -70px;
+  padding: 10px 15px;
+  transition: box-shadow .6s ease,transform .2s ease-in-out;
+}
