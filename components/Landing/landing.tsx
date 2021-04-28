@@ -6,7 +6,7 @@ export interface LandingProps {}
 
 export const Landing: React.FC<LandingProps> = (props: LandingProps) => {
   return (
-    <div className={`container ${styles["container-landing"]}`}>
+    <div className={`container ${styles["container"]}`}>
       <h1>The next-generation anime platform</h1>
       <h2>
         Track, share, and discover your favorite anime and manga with AniList.
