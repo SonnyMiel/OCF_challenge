@@ -1,0 +1,113 @@
+@import '/styles/colors.scss';
+
+.card__container {
+  display: grid;
+  grid-template-rows: min-content auto;
+  position: relative;
+  width: 185px;
+  &:hover > .card__details {
+    opacity: 1;
+  }
+}
+.card__coverImage {
+  background: rgba($background-light,.8);
+  border-radius: 4px;
+  box-shadow: 0 14px 30px rgba($blue-shadow,.15),0 4px 4px rgba($blue-shadow,.05);
+  cursor: pointer;
+  display: inline-block;
+  height: 265px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  z-index: 5;
+  & > img {
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    transition: opacity .3s ease-in-out;
+    width: 100%;
+  }
+}
+.card__title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 21px;
+  margin-top: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: color .2s ease;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  z-index: 5;
+}
+
+.card__details {
+  background: $white;
+  border-radius: 6px;
+  box-shadow: 0 14px 30px rgba($blue-shadow,.15),0 4px 4px rgba($blue-shadow,.05);
+  min-width: 290px;
+  opacity: 0;
+  padding: 24px;
+  pointer-events: none;
+  position: absolute;
+  top: 5px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+  z-index: 10;
+}
+.card__details-right {
+  margin-left: 18px;
+  left: 100%;
+}
+
+.details__header {
+  display: grid;
+  grid-template-columns: auto 60px;
+  font-weight: 600;
+  color: $grey;
+  font-size: 1.6rem;
+}
+.details__pct {
+  display: flex;
+  align-items: center;
+  & > svg {
+    font-size: 1.9rem;
+  }
+}
+.details__studios {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+.details__info {
+  color: $grey;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 6px;
+}
+.details__genres {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 20px;
+  overflow: hidden;
+  margin-top: 22px;
+  & > div {
+    border-radius: 10px;
+    color: $white;
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    height: 20px;
+    line-height: 2rem;
+    margin-right: 11px;
+    padding: 0 12px;
+    text-transform: lowercase;
+  }
+}

@@ -8,7 +8,7 @@ export interface MenuProps {}
 
 export const Menu: React.FC<MenuProps> = (props: MenuProps) => {
   return (
-    <div className={`container ${styles["container-nav"]}`}>
+    <div className={`${styles["container-nav"]}`}>
       <div className={styles["nav-centered"]}>
         <a href="#">
           <img src="/logo.svg" alt="AniList Logo" />

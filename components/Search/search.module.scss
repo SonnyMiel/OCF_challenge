@@ -1,0 +1,39 @@
+@import '/styles/colors.scss';
+
+.search__container {
+  margin-top: -30px;
+  & > div {
+    margin-bottom: 50px;
+    & > a {
+      color: $grey;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      align-items: flex-end;
+      display: flex;
+      z-index: 5;
+      position: relative;
+      &:hover {
+        color: $grey-dark;
+      }
+      & > h3 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin: 0;
+      }
+      & > p {
+        color: $grey-light;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: auto;
+        text-transform: none;
+        transition: color .2s ease;
+        &:hover {
+          color: $grey-dark;
+        }
+      }
+    }
+  }
+}

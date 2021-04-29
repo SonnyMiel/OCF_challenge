@@ -1,0 +1,10 @@
+.results__container {
+  display: grid;
+  grid-gap: 28px 30px;
+  grid-template-columns: repeat(auto-fill,185px);
+  justify-content: space-between;
+}
+.results__container-inline {
+  grid-template-columns: 1fr;
+  grid-gap: 24px;
+}

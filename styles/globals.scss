@@ -34,5 +34,10 @@ html {
 }
 
 .container {
-  display: flex;
+  max-width: 1520px;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin: 0 auto;
+  min-width: 320px;
+  width: 100%;
 }

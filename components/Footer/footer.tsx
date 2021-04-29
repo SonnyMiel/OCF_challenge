@@ -4,7 +4,7 @@ export interface FooterProps {}
 
 export const Footer: React.FC<FooterProps> = (props: FooterProps) => {
   return (
-    <div className={`container ${styles["landing__container"]}`}>
+    <div className={`${styles["landing__container"]}`}>
       <div className={styles["landing__container-wrap"]}>
         <div className={styles["landing__themes"]}>
           <h2>Site Theme</h2>
