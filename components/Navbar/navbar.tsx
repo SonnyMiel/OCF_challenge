@@ -8,19 +8,19 @@ export interface MenuProps {}
 
 export const Menu: React.FC<MenuProps> = (props: MenuProps) => {
   return (
-    <div className={`${styles["container-nav"]}`}>
-      <div className={styles["nav-centered"]}>
+    <div className={`${styles["navbar__container"]}`}>
+      <div className={styles["navbar__centered"]}>
         <a href="#">
           <img src="/logo.svg" alt="AniList Logo" />
         </a>
-        <div className={styles["nav-actions"]}>
-            <span className={styles["nav-trigger-dropdown"]}>
+        <div className={styles["navbar__actions"]}>
+            <span className={styles["navbar__trigger__dropdown"]}>
               <a href="#">Browse</a>
-              <Dropdown className={styles["nav-dropdown"]}/>
+              <Dropdown className={styles["navbar__dropdown"]}/>
             </span>
             <span><a href="#">Social</a></span>
             <span><a href="#">Forum</a></span>
-            <a href="#" className={`${styles["nav-btn"]} btn`}>Login</a>
+            <a href="#" className={`btn ${styles["navbar__btn"]}`}>Login</a>
             <a href="#" className="btn btn-secondary">Sign Up</a>
         </div>
       </div>

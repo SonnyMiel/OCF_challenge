@@ -1,6 +1,8 @@
-import { Media } from "models/media";
 import { CgSmileNeutral } from "react-icons/cg";
 import { HiOutlineEmojiHappy, HiOutlineEmojiSad } from "react-icons/hi";
+
+import { Media } from "models/media";
+
 import styles from "./inlineCard.module.scss";
 
 export interface InlineCardProps {

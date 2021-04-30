@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { GetServerSideProps } from "next";
 
 import client from "api/apollo-client";

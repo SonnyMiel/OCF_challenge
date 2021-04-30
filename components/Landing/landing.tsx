@@ -6,13 +6,13 @@ export interface LandingProps {}
 
 export const Landing: React.FC<LandingProps> = (props: LandingProps) => {
   return (
-    <div className={`container ${styles["container"]}`}>
+    <div className={`container ${styles["landing__container"]}`}>
       <h1>The next-generation anime platform</h1>
       <h2>
         Track, share, and discover your favorite anime and manga with AniList.
       </h2>
-      <div className={styles["items"]}>
-        <div className={styles["item"]}>
+      <div className={styles["landing__items"]}>
+        <div className={styles["items__item"]}>
           <div><img src="/stats.svg" alt="icon of statistics"/></div>
           <div>
             <h3>Discover your obsessions</h3>
@@ -22,7 +22,7 @@ export const Landing: React.FC<LandingProps> = (props: LandingProps) => {
             </p>
           </div>
         </div>
-        <div className={styles["item"]}>
+        <div className={styles["items__item"]}>
           <div><img src="/apps.svg" alt="icon of a smartphone"/></div>
           <div>
             <h3>Bring AniList anywhere</h3>
@@ -32,7 +32,7 @@ export const Landing: React.FC<LandingProps> = (props: LandingProps) => {
             </p>
           </div>
         </div>
-        <div className={styles["item"]}>
+        <div className={styles["items__item"]}>
           <div><img src="/social.svg" alt="icon of social media"/></div>
           <div>
             <h3>Join the conversation</h3>
@@ -42,7 +42,7 @@ export const Landing: React.FC<LandingProps> = (props: LandingProps) => {
             </p>
           </div>
         </div>
-        <div className={styles["item"]}>
+        <div className={styles["items__item"]}>
           <div><img src="/custom.svg" alt="icon of paint stand"/></div>
           <div>
             <h3>Tweak it to your liking</h3>
@@ -53,7 +53,7 @@ export const Landing: React.FC<LandingProps> = (props: LandingProps) => {
           </div>
         </div>
       </div>
-      <a className={`btn btn-secondary ${styles["btn"]}`}>
+      <a className={`btn btn-secondary ${styles["landing__btn"]}`}>
         <div>Join Now</div>
         <div><IoIosArrowDroprightCircle size={"37px"}/></div>
       </a>

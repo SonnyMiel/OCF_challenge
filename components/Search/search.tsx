@@ -3,15 +3,15 @@ import { useLazyQuery } from "@apollo/client";
 
 import { getMedias, getMediaWithFilter } from "api/anilist";
 
+import { useDidUpdateEffect } from "hooks/useDidUpdate";
 import { Category } from "models/category";
+import { getNextSeason, getSeason } from "utils/seasons";
 
 import SearchForm from "./Form/searchForm";
 import SearchResults from "./Results/searchResults";
 
-import { getNextSeason, getSeason } from "utils/seasons";
-
 import styles from "./search.module.scss";
-import { useDidUpdateEffect } from "hooks/useDidUpdate";
+import { ADD_GENRE, ADD_TAG, DELETE_ALL, SET_SEARCH } from "models/constant";
 
 export interface SearchProps {
   medias: Category;
@@ -22,17 +22,17 @@ export interface SearchProps {
 const filterReducer = (state, action) => {
   console.log(action);
   switch (action.type) {
-    case "addGenre":
+    case ADD_GENRE:
       return Object.assign({}, state, {
         genres: [...state.genres, action.payload],
       });
-    case "addTag":
+    case ADD_TAG:
       return Object.assign({}, state, {
         tags: [...state.tags, action.payload],
       });
-    case "deleteAll":
+    case DELETE_ALL:
       return Object.assign({}, state, { genres: [], tags: [] });
-    case "setSearch":
+    case SET_SEARCH:
       return Object.assign({}, state, { search: action.payload });
     default:
       throw new Error("action not handled");

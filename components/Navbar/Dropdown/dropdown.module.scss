@@ -1,6 +1,6 @@
 @import '/styles/colors.scss';
 
-.content {
+.dropdown__content {
   padding: 21px 27px;
   & > div:first-child {
     margin-bottom: 16px;
@@ -35,7 +35,7 @@
   }
 }
 
-.footer {
+.dropdown__footer {
   background: $background;
   border-radius: 0 0 6px 6px;
   color: $grey;

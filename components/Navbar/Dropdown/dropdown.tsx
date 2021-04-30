@@ -11,7 +11,7 @@ export interface DropdownProps {
 export const Dropdown: React.FC<DropdownProps> = (props: DropdownProps) => {
   return (
     <div className={`${props.className}`}>
-      <div className={styles["content"]}>
+      <div className={styles["dropdown__content"]}>
         <div className="anime">
           <a href="#">
             <BsFillCaretRightFill />
@@ -39,7 +39,7 @@ export const Dropdown: React.FC<DropdownProps> = (props: DropdownProps) => {
           </div>
         </div>
       </div>
-      <div className={styles["footer"]}>
+      <div className={styles["dropdown__footer"]}>
         <a href="#">
           <GoPerson />
           Staff

@@ -1,6 +1,6 @@
 @import '/styles/colors.scss';
 
-.landing__container {
+.footer__container {
   margin-top: 80px;
   background: $black;
   color: $blue-light-secondary;
@@ -10,7 +10,7 @@
   text-align: left;
   width: 100%;
 }
-.landing__container-wrap {
+.footer__container-wrap {
   display: flex;
   margin: 0 auto;
   max-width: 1520px;
@@ -18,7 +18,7 @@
   padding-right: 100px;
   width: 100%;
 }
-.landing__themes {
+.footer__themes {
   & > h2 {
     color: #3db4f2;
     font-size: 1.6rem;
@@ -26,7 +26,7 @@
     padding-bottom: 14px;
   }
 }
-.landing__theme-preview {
+.footer__theme-preview {
   border-radius: 3px;
   border: 2px solid $grey-dark;
   cursor: pointer;
@@ -37,24 +37,24 @@
   width: 25px;
   text-align: left;
 }
-.landing__theme-preview--default {
+.footer__theme-preview--default {
   background: $white-secondary;
   color: $blue-dark-secondary;
 }
-.landing__theme-preview--dark {
+.footer__theme-preview--dark {
   background: transparent;
   color: inherit;
 }
-.landing__theme-preview--contrast {
+.footer__theme-preview--contrast {
   background: $white;
   color: $black;
 }
-.landing__wrap-links {
+.footer__wrap-links {
   display: flex;
   font-size: 1.5rem;
   margin-left: auto;
 }
-.landing__links {
+.footer__links {
   margin-left: 80px;
   & > ul > li > a {
     display: block;

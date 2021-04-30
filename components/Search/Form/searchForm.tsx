@@ -3,6 +3,8 @@ import { BiSearch, BiSlider } from "react-icons/bi";
 import { FiDelete } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
 
+import { ADD_GENRE, ADD_TAG, DELETE_ALL, SET_SEARCH } from "models/constant";
+
 import styles from "./searchForm.module.scss";
 
 export interface SearchFormProps {
@@ -12,6 +14,18 @@ export interface SearchFormProps {
   options: { search: string; genres: string[]; tags: string[]}
 }
 
+const BasicFilter = ({title, type}) => (
+  <div className={styles["searchForm__filter"]}>
+    <p>{title}</p>
+    <div className={styles["searchForm__select-wrap"]} tabIndex={-1}>
+      <div className={styles["select__input"]}>
+        <input type={type} autoComplete="off" placeholder="Any" />
+        <IoIosArrowDown color="grey" />
+      </div>
+    </div>
+  </div>
+)
+
 export const SearchForm: React.FC<SearchFormProps> = ({
   genres,
   tags,
@@ -19,6 +33,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({
   options,
 }: SearchFormProps) => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+
   return (
     <>
       <div className={styles["searchForm__filters"]}>
@@ -30,7 +45,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({
               type="search"
               autoComplete="off"
               value={options.search}
-              onChange={(e) => handleDispatch({type: 'setSearch', payload:e.target.value})}
+              onChange={(e) => handleDispatch({type: SET_SEARCH, payload:e.target.value})}
             />
           </div>
         </div>
@@ -53,7 +68,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({
                   <FiDelete
                     color="grey"
                     onClick={() => {
-                      handleDispatch({type: 'deleteAll'});
+                      handleDispatch({type: DELETE_ALL});
                       setIsDropdownVisible(false);
                     }}
                   />
@@ -77,7 +92,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({
                       <div
                         className={styles["options__option"]}
                         onClick={() => {
-                          handleDispatch({type: 'addGenre', payload:genre});
+                          handleDispatch({type: ADD_GENRE, payload:genre});
                           setIsDropdownVisible(false);
                         }
                         }
@@ -92,7 +107,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({
                         <div
                           className={styles["options__option"]}
                           onClick={() => {
-                            handleDispatch({type: 'addTag', payload:tag});
+                            handleDispatch({type: ADD_TAG, payload:tag});
                             setIsDropdownVisible(false);
                           }
                           }
@@ -107,42 +122,10 @@ export const SearchForm: React.FC<SearchFormProps> = ({
             )}
           </div>
         </div>
-        <div className={styles["searchForm__filter"]}>
-          <p>Year</p>
-          <div className={styles["searchForm__select-wrap"]} tabIndex={-1}>
-            <div className={styles["select__input"]}>
-              <input type="search" autoComplete="off" placeholder="Any" />
-              <IoIosArrowDown color="grey" />
-            </div>
-          </div>
-        </div>
-        <div className={styles["searchForm__filter"]}>
-          <p>Season</p>
-          <div className={styles["searchForm__select-wrap"]} tabIndex={-1}>
-            <div className={styles["select__input"]}>
-              <input type="search" autoComplete="off" placeholder="Any" />
-              <IoIosArrowDown color="grey" />
-            </div>
-          </div>
-        </div>
-        <div className={styles["searchForm__filter"]}>
-          <p>Format</p>
-          <div className={styles["searchForm__select-wrap"]} tabIndex={-1}>
-            <div className={styles["select__input"]}>
-              <input type="search" autoComplete="off" placeholder="Any" />
-              <IoIosArrowDown color="grey" />
-            </div>
-          </div>
-        </div>
-        <div className={styles["searchForm__filter"]}>
-          <p>Airing Status</p>
-          <div className={styles["searchForm__select-wrap"]} tabIndex={-1}>
-            <div className={styles["select__input"]}>
-              <input type="search" autoComplete="off" placeholder="Any" />
-              <IoIosArrowDown color="grey" />
-            </div>
-          </div>
-        </div>
+        <BasicFilter title={"Year"} type="search" />
+        <BasicFilter title={"Season"} type="search" />
+        <BasicFilter title={"Format"} type="search" />
+        <BasicFilter title={"Airing Status"} type="search" />
       </div>
       <div className={styles["searchForm__filters-secondary"]}>
         <div>

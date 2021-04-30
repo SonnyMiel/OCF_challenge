@@ -4,37 +4,37 @@ export interface FooterProps {}
 
 export const Footer: React.FC<FooterProps> = (props: FooterProps) => {
   return (
-    <div className={`${styles["landing__container"]}`}>
-      <div className={styles["landing__container-wrap"]}>
-        <div className={styles["landing__themes"]}>
+    <div className={`${styles["footer__container"]}`}>
+      <div className={styles["footer__container-wrap"]}>
+        <div className={styles["footer__themes"]}>
           <h2>Site Theme</h2>
           <button
             className={`
-              ${styles["landing__theme-preview"]}
-              ${styles["landing__theme-preview--default"]}
+              ${styles["footer__theme-preview"]}
+              ${styles["footer__theme-preview--default"]}
             `}
           >
             A
           </button>
           <button
             className={`
-              ${styles["landing__theme-preview"]}
-              ${styles["landing__theme-preview--dark"]}
+              ${styles["footer__theme-preview"]}
+              ${styles["footer__theme-preview--dark"]}
             `}
           >
             A
           </button>
           <button
             className={`
-              ${styles["landing__theme-preview"]}
-              ${styles["landing__theme-preview--contrast"]}
+              ${styles["footer__theme-preview"]}
+              ${styles["footer__theme-preview--contrast"]}
             `}
           >
             A
           </button>
         </div>
-        <div className={styles["landing__wrap-links"]}>
-          <div className={styles["landing__links"]}>
+        <div className={styles["footer__wrap-links"]}>
+          <div className={styles["footer__links"]}>
             <ul>
               <li>
                 <a href="">AniList.co</a>
@@ -47,7 +47,7 @@ export const Footer: React.FC<FooterProps> = (props: FooterProps) => {
               </li>
             </ul>
           </div>
-          <div className={styles["landing__links"]}>
+          <div className={styles["footer__links"]}>
             <ul>
               <li>
                 <a href="">Apps</a>
@@ -63,7 +63,7 @@ export const Footer: React.FC<FooterProps> = (props: FooterProps) => {
               </li>
             </ul>
           </div>
-          <div className={styles["landing__links"]}>
+          <div className={styles["footer__links"]}>
             <ul>
               <li>
                 <a href="">Discord</a>
@@ -79,7 +79,7 @@ export const Footer: React.FC<FooterProps> = (props: FooterProps) => {
               </li>
             </ul>
           </div>
-          <div className={styles["landing__links"]}>
+          <div className={styles["footer__links"]}>
             <ul>
               <li>
                 <a href="">Add Data</a>

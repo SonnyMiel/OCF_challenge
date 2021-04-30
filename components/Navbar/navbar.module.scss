@@ -1,7 +1,7 @@
 @import "/styles/colors.scss";
 @import "/styles/fonts.scss";
 
-.container-nav {
+.navbar__container {
   background-color: $blue-dark;
   color: $purple-light;
   justify-content: center;
@@ -9,7 +9,7 @@
   height: 75px;
   display: flex;
 }
-.nav-centered {
+.navbar__centered {
   max-width: 1050px;
   width: 100%;
   display: flex;
@@ -27,7 +27,7 @@
     }
   }
 }
-.nav-actions {
+.navbar__actions {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -44,12 +44,8 @@
       color: $purple-light-hovered;
     }
   }
-  .nav-btn {
-    margin-left: 70px;
-    padding-right: 24px;
-  }
-  .nav-trigger-dropdown {
-    .nav-dropdown {
+  .navbar__trigger__dropdown {
+    .navbar__dropdown {
       visibility: hidden;
       position: absolute;
       top: 32px;
@@ -62,5 +58,9 @@
     &:hover .nav-dropdown {
       visibility: visible;
     }
+  }
+  .navbar__btn {
+    margin-left: 70px;
+    padding-right: 24px;
   }
 }
