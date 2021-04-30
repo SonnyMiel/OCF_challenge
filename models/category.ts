@@ -1,9 +1,22 @@
 import { Media } from "./media";
 
 export interface Category {
-  trending: Media[];
-  season: Media[];
-  nextSeason: Media[];
-  popular: Media[];
-  top: Media[];
+  trending: {
+    media: Media[]
+  };
+  filtered?: {
+    media: Media[]
+  };
+  season: {
+    media: Media[]
+  };
+  nextSeason: {
+    media: Media[]
+  };
+  popular: {
+    media: Media[]
+  };
+  top: {
+    media: Media[]
+  };
 }

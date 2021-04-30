@@ -22,7 +22,7 @@ export const Card: React.FC<CardProps> = ({ media, isRight }: CardProps) => {
       <a href="#" className={styles["card__coverImage"]}>
         <img
           src={media.coverImage?.large}
-          alt={`Cover image of ${media.title?.english}`}
+          alt={`Cover image of ${media.title?.romaji}`}
         />
       </a>
       <a
@@ -30,16 +30,16 @@ export const Card: React.FC<CardProps> = ({ media, isRight }: CardProps) => {
         className={styles["card__title"]}
         style={{ color: isHover ? media?.coverImage?.color : "#748899" }}
       >
-        {media.title?.english}
+        {media.title?.romaji}
       </a>
-      <div className={`${styles["card__details"]} ${isRight ? styles["card__details-right"] : ''}`}>
+      <div className={`${styles["card__details"]} ${isRight ? styles["card__details-right"] : styles["card__details-left"]}`}>
         <div className={styles["details__header"]}>
           <p>
             {(media.nextAiringEpisode &&
               `Ep ${media.nextAiringEpisode.episode} airing in ${Math.round(
                 media.nextAiringEpisode.timeUntilAiring / (60 * 60 * 24)
               )} days`) ||
-              `${media.season.toUpperCase()} ${media.startDate.year}`}
+              `${media.season?.toUpperCase()} ${media.startDate.year}`}
           </p>
           {media.averageScore && (
             <div className={styles["details__pct"]}>
@@ -55,7 +55,7 @@ export const Card: React.FC<CardProps> = ({ media, isRight }: CardProps) => {
           )}
         </div>
         <div className={styles["details__studios"]}>
-          {media.studios.edges[0].node.name}
+          {media.studios?.edges[0]?.node?.name}
         </div>
         <div className={styles["details__info"]}>
           <span>{media.format}</span>
@@ -69,7 +69,7 @@ export const Card: React.FC<CardProps> = ({ media, isRight }: CardProps) => {
           }
         </div>
         <div className={styles["details__genres"]}>
-          { media.genres && media.genres.slice(0, 3).map(genre => <div style={{ background: media.coverImage.color}}>{genre}</div>)}
+          { media.genres.length && media.genres.slice(0, 3).map(genre => <div style={{ background: media.coverImage.color}}>{genre}</div>)}
         </div>
       </div>
     </div>

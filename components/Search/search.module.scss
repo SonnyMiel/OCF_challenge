@@ -37,3 +37,8 @@
     }
   }
 }
+.search__filters {
+  display: grid;
+  grid-template-columns: auto 42px;
+  align-items: center;
+}

@@ -1,0 +1,153 @@
+@import '/styles/colors.scss';
+
+.searchForm__filters {
+  margin: 40px 0;
+  margin-bottom: 25px;
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: repeat(6,180px);
+  input {
+    background: 0 0;
+    border: none;
+    color: $grey;
+    display: inline-block;
+    outline: 0;
+    width: 100%;
+  }
+}
+.searchForm__filter {
+  & > p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 10px 0;
+  }
+}
+.searchForm__filters-secondary {
+  position: relative;
+  margin: 40px 0;
+  margin-bottom: 25px;
+  height: 75px;
+  & > div {
+    align-items: center;
+    background: $white;
+    border-radius: 6px;
+    box-shadow: 0 14px 30px rgba($blue-shadow,.15),0 4px 4px rgba($blue-shadow,.05);
+    color: $grey;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 1.8rem;
+    height: 38px;
+    justify-content: center;
+    margin-top: 37px;
+    width: 38px;
+    transition: color .3s ease-in-out;
+    & > svg {
+      fill: $grey;
+      &:hover {
+        fill: $blue-light;
+      }
+    }
+  }
+}
+.search__input {
+  background: $white;
+  border-radius: 6px;
+  box-shadow: 0 14px 30px rgba($blue-shadow,.1),0 4px 4px rgba($blue-shadow,.04);
+  display: grid;
+  font-size: 1.3rem;
+  font-weight: 600;
+  grid-gap: 10px;
+  grid-template-columns: 13px auto 13px;
+  letter-spacing: .03rem;
+  padding: 11px 16px;
+  padding-left: 13px;
+  & > svg {
+    font-size: 1.3rem;
+    height: 1.6rem;
+  }
+}
+.searchForm__select-wrap {
+  position: relative;
+  width: 100%;
+  outline: 0;
+}
+.select__input {
+  align-items: center;
+  background: $white;
+  border-radius: 6px;
+  box-shadow: 0 14px 30px rgba($blue-shadow,.1),0 4px 4px rgba($blue-shadow,.04);
+  cursor: pointer;
+  display: grid;
+  font-size: 1.3rem;
+  font-weight: 600;
+  grid-template-columns: auto 20px;
+  height: 40px;
+  letter-spacing: .03rem;
+  padding: 11px 16px;
+  & > div {
+    position: absolute;
+    user-select: none;
+    position: relative;
+    max-height: 14px;
+    & > div {
+      color: $grey;
+      background: rgba($background-light,.8);
+      border-radius: 6px;
+      display: inline-block;
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-right: 7px;
+      margin-left: -8px;
+      margin-top: -5px;
+      padding: 5px 8px;
+    }
+  }
+}
+.searchForm__select-options {
+  background: $white;
+  border-radius: 6px;
+  box-shadow: 0 14px 30px rgba($blue-shadow,.1),0 4px 4px rgba($blue-shadow,.04);
+  cursor: auto;
+  left: 0;
+  position: absolute;
+  top: calc(100% + 10px);
+  width: 100%;
+  z-index: 50;
+  & > div {
+    max-height: 500px;
+    overflow: auto;
+    overscroll-behavior: contain;
+    padding: 10px;
+    position: relative;
+  }
+}
+.options__title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: .06rem;
+  margin-top: 15px;
+  padding: 4px;
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.options__option {
+  border-radius: 4px;
+  color: $grey;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 10px 12px;
+  transition: background .2s ease-in-out,color .2s ease-in-out;
+  white-space: normal;
+  &:hover {
+    color: $blue;
+    background: rgba($grey,.6);
+  }
+  & > label {
+    display: grid;
+    grid-template-columns: auto 16px;
+    cursor: pointer;
+  }
+}

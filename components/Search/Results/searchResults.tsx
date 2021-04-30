@@ -16,17 +16,17 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
   medias,
   isInline,
 }: SearchResultsProps) => {
-  return !medias ? null : (
+  return medias?.length ? (
     <div className={`${styles["results__container"]} ${isInline ? styles["results__container-inline"] : ''}`}>
       {medias?.map((media, index) =>
         isInline ? (
           <InlineCard media={media} key={media.id} rank={index} />
         ) : (
-          <Card media={media} key={media.id} isRight={index < 3} />
+          <Card media={media} key={media.id} isRight={index < 4} />
         )
       )}
     </div>
-  );
+  ) : null;
 };
 
 export default SearchResults;

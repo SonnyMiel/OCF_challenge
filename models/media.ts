@@ -1,6 +1,6 @@
 export interface Media {
   id: number;
-  title: { english: string };
+  title: { romaji: string };
   coverImage: { large: string; color: string };
   startDate: { year: number, month: number, day: number };
   endDate: { year: number, month: number, day: number };

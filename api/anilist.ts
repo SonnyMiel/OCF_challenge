@@ -1,41 +1,10 @@
 import { gql } from "graphql-tag";
 
-export const endpoint = "https://graphql.anilist.co";
-
-// Here we define our query as a multi-line string
-// Storing it in a separate .graphql/.gql file is also possible
-export const query = gql`
-query ($season:MediaSeason,$seasonYear:Int $nextSeason:MediaSeason,$nextYear:Int) {
-  trending:Page (page:1,perPage:6) {
-    media (sort:TRENDING_DESC,type:ANIME,isAdult:false) {
-      ...media
-    }
-  }
-  season:Page (page:1,perPage:6) {
-    media (season:$season,seasonYear:$seasonYear,sort:POPULARITY_DESC,type:ANIME,isAdult:false) {
-      ...media
-    }
-  }
-  nextSeason:Page (page:1,perPage:6) {
-    media (season:$nextSeason,seasonYear:$nextYear,sort:POPULARITY_DESC,type:ANIME,isAdult:false) {
-      ...media
-    }
-  }
-  popular:Page (page:1,perPage:6) {
-    media (sort:POPULARITY_DESC,type:ANIME,isAdult:false) {
-      ...media
-    }
-  }
-  top:Page (page:1,perPage:10) {
-    media (sort:SCORE_DESC,type:ANIME,isAdult:false) {
-      ...media
-    }
-  }
-}
+const fragmentMedia = `
 fragment media on Media {
   id
   title {
-    english
+    romaji
   }
   coverImage {
     large
@@ -79,13 +48,57 @@ fragment media on Media {
 }
 `;
 
-interface fetcherProps {
-  search?: string;
-  genre?: [string];
-  tag?: [string];
-  nextSeason: "SUMMER"
-  nextYear: 2021
-  season: "SPRING"
-  seasonYear: 2021
-  type: "ANIME"
+export const endpoint = "https://graphql.anilist.co";
+
+// Here we define our query as a multi-line string
+// Storing it in a separate .graphql/.gql file is also possible
+export const getMedias = gql`
+query ($season:MediaSeason,$seasonYear:Int $nextSeason:MediaSeason,$nextYear:Int) {
+  trending:Page (page:1,perPage:6) {
+    media (sort:TRENDING_DESC,type:ANIME,isAdult:false) {
+      ...media
+    }
+  }
+  season:Page (page:1,perPage:6) {
+    media (season:$season,seasonYear:$seasonYear,sort:POPULARITY_DESC,type:ANIME,isAdult:false) {
+      ...media
+    }
+  }
+  nextSeason:Page (page:1,perPage:6) {
+    media (season:$nextSeason,seasonYear:$nextYear,sort:POPULARITY_DESC,type:ANIME,isAdult:false) {
+      ...media
+    }
+  }
+  popular:Page (page:1,perPage:6) {
+    media (sort:POPULARITY_DESC,type:ANIME,isAdult:false) {
+      ...media
+    }
+  }
+  top:Page (page:1,perPage:10) {
+    media (sort:SCORE_DESC,type:ANIME,isAdult:false) {
+      ...media
+    }
+  }
 }
+${fragmentMedia}
+`;
+
+export const getMediaWithFilter = gql`
+query ($search:String, $genres: [String], $tags: [String]) {
+  filtered:Page (page:1,perPage:10) {
+    media (search: $search, type: ANIME, genre_in: $genres, tag_in: $tags) {
+      ...media
+    }
+  }
+}
+${fragmentMedia}
+`;
+
+export const getGenres = gql`
+  query {
+    GenreCollection
+    MediaTagCollection {
+      name
+    }
+  }
+`;

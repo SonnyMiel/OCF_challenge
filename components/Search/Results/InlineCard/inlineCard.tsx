@@ -21,13 +21,13 @@ export const InlineCard: React.FC<InlineCardProps> = ({
       <a href="" className={styles["inlineCard__cover"]}>
         <img
           src={media.coverImage.large}
-          alt={`Cover image of ${media.title.english}`}
+          alt={`Cover image of ${media.title?.romaji}`}
         />
       </a>
       <div className={styles["inlineCard__details"]}>
         <div className={styles["inlineCard__title"]}>
           <p>
-            <a>{media.title.english}</a>
+            <a>{media.title?.romaji}</a>
           </p>
           <div className={styles["inlineCard__genres"]}>
             {media.genres &&
